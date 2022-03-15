@@ -1,0 +1,17 @@
+.correct {
+    color: #00aa00;
+    font-weight: bold;
+}
+
+.incorrect {
+    color: #ff0000;
+    font-weight: bold;
+}
+
+.question-block {
+    display: none;
+}
+
+.active-question {
+    display: block;
+}
