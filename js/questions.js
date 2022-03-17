@@ -1,8 +1,4 @@
-﻿//Settings
-var randomizeAnswers = true;
-var resultsHeading = '<h3>Results</h3>';
-
-//Questions
+﻿//Questions presented in quiz
 let questions = [
     {
         number: 1,
