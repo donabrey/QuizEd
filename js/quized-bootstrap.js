@@ -13,26 +13,26 @@ let questionAnswers = [];
 
 questions.forEach(function (currentQuestion, questionNumber) {
     var output = '';
-    output += '<div class="question-block">' + currentQuestion.question;
-    output += '<div class="answers">';
+    output += '<div class="question-block"><div class="card"><div class="card-header"><h5 class="card-title">' + currentQuestion.question + '</h5></div>';
+    output += '<div class="answers card-body">';
     let answerOrder = randomOrder(currentQuestion.answers.length);
 
     if (randomizeAnswers) {
         for (let i = 0; i < currentQuestion.answers.length; i++) {
-            output += '<input type="radio" id="' + questionNumber + '_' + i + '" name="question' + questionNumber + '" value="' + currentQuestion.answers[answerOrder[i]].answer + '"><label class="form-check-label" id="' + questionNumber + '_' + i + '_label" for="' + questionNumber + '_' + i + '">' + answerLabels[i] + ': ' + currentQuestion.answers[answerOrder[i]].answer + '</label>';
+            output += '<div class="form-check"><input class="form-check-input" type="radio" id="' + questionNumber + '_' + i + '" name="question' + questionNumber + '" value="' + currentQuestion.answers[answerOrder[i]].answer + '"><label class="form-check-label" id="' + questionNumber + '_' + i + '_label" for="' + questionNumber + '_' + i + '">' + answerLabels[i] + ': ' + currentQuestion.answers[answerOrder[i]].answer + '</label></div>';
             questionAnswer = { questionNumber: currentQuestion.number, questionAnswerNumber: questionNumber + '_' + i, correct: currentQuestion.answers[answerOrder[i]].correct };
             questionAnswers.push(questionAnswer);
         }
     }
     else {
         currentQuestion.answers.forEach(function (currentAnswer, answerNumber) {
-            output += '<input type="radio" id="' + questionNumber + '_' + answerNumber + '" name="question' + questionNumber + '" value="' + currentAnswer.answer + '"><label class="form-check-label" id="' + questionNumber + '_' + answerNumber + '_label" for="' + questionNumber + '_' + answerNumber + '">' + answerLabels[answerNumber] + ': ' + currentAnswer.answer + '</label>';
+            output += '<div class="form-check"><input class="form-check-input" type="radio" id="' + questionNumber + '_' + answerNumber + '" name="question' + questionNumber + '" value="' + currentAnswer.answer + '"><label class="form-check-label" id="' + questionNumber + '_' + answerNumber + '_label" for="' + questionNumber + '_' + answerNumber + '">' + answerLabels[answerNumber] + ': ' + currentAnswer.answer + '</label></div>';
             questionAnswer = { questionNumber: currentQuestion.number, questionAnswerNumber: questionNumber + '_' + answerNumber, correct: currentAnswer.correct };
             questionAnswers.push(questionAnswer);
         });
     }
 
-    output += "</div></div>";
+    output += "</div></div></div>";
     quiz.innerHTML += output;
 });
 

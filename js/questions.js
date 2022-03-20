@@ -1,7 +1,7 @@
-/* Questions presented in quiz
+﻿/* Questions presented in quiz
  * The number option determines the order of the questions.
  * There can be an unlimited number of questions.
- * There can be an unlimited number of answers to each question but there must be at least one.
+ * There can be up to 26 answers (letters of the alphabet) to each question but there must be at least one.
  * There can be more than one correct answer but there must be at least one correct answer for the user to be able choose a correct answer.
  */
 let questions = [
